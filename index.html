@@ -5,7 +5,6 @@
 <title>Valentine</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
@@ -14,7 +13,7 @@ margin:0;
 height:100vh;
 overflow:hidden;
 background:linear-gradient(135deg,#ffd6e7,#ffeef6);
-font-family:Arial, sans-serif;
+font-family: 'Arial', sans-serif;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -22,25 +21,24 @@ align-items:center;
 
 .container{
 background:white;
-padding:30px;
-border-radius:20px;
+padding:25px;
+border-radius:25px;
 text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
 width:90%;
-max-width:400px;
-position:relative;
+max-width:420px;
 z-index:2;
 }
 
 h1{
 font-size:26px;
-margin-bottom:20px;
+margin-bottom:10px;
 }
 
 button{
-padding:12px 22px;
+padding:14px 24px;
 border:none;
-border-radius:25px;
+border-radius:30px;
 font-size:18px;
 cursor:pointer;
 margin:10px;
@@ -57,12 +55,11 @@ background:#ddd;
 }
 
 #message{
-margin-top:15px;
 font-size:14px;
-color:#444;
+min-height:20px;
 }
 
-/* Floating Hearts */
+/* Floating hearts */
 .heart{
 position:absolute;
 bottom:-20px;
@@ -73,7 +70,7 @@ color:#ff4d6d;
 
 @keyframes floatUp{
 0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-110vh);opacity:0;}
+100%{transform:translateY(-120vh);opacity:0;}
 }
 </style>
 </head>
@@ -81,66 +78,21 @@ color:#ff4d6d;
 <body>
 
 <div class="container">
-<h1 id="title">Adi my baby will you be my Valentine? 💖</h1>
+
+<h1>Adi my baby will you be my Valentine? 💖</h1>
+
+<img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="160">
+<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="160">
+
+<br>
 
 <button class="yes-btn" id="yesBtn" onclick="yesClick()">Yes</button>
 <button class="no-btn" onclick="noClick()">No</button>
 
 <p id="message"></p>
+
 </div>
 
-<script>
-/* Floating hearts generator */
-setInterval(()=>{
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
-},300);
-
-/* No button messages */
-const messages=[
-"Are you sure?",
-"Really sure?",
-"Think again!",
-"Baby pleaseee 🥺",
-"I’ll cry 😭",
-"I’ll be very sad",
-"Say yes already ❤️"
-];
-
-let msgIndex=0;
-let size=18;
-
-function noClick(){
-document.getElementById("message").innerText=messages[msgIndex];
-msgIndex=(msgIndex+1)%messages.length;
-
-size+=5;
-document.getElementById("yesBtn").style.fontSize=size+"px";
-}
-
-/* Yes click */
-function yesClick(){
-confetti({
-particleCount:200,
-spread:100,
-origin:{y:0.6}
-});
-
-document.body.innerHTML=`
-<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#ffeef6;text-align:center;">
-<div>
-<h1>YAYYYY 😍💘</h1>
-<p>You’re my Valentine forever.</p>
-<p>I love you ❤️</p>
-</div>
-</div>`;
-}
-</script>
-
-</body>
-</html>
+<!-- Music -->
+<audio autoplay loop>
+<source src="https://ww
